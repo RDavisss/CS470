@@ -41,6 +41,7 @@ public class Server
             client_input = in.readUTF(); 
             System.out.println(client_input);
   
+            // Checks to see if user entered Y or y
              if (client_input.equals("Y") || client_input.equals("y"))
              {
                 System.out.println("\nClient updated to Software version: "
@@ -51,12 +52,14 @@ public class Server
                 buffwriter.write(softwareVersion);
              }
              
+            // Checks to see if user entered N or n
              else if (client_input.equals("N") || client_input.equals("n"))
              {
                  System.out.println("Client did not want the update.");
                  System.exit(0);
              }
              
+            // Check for invalid response
              else
              {
                  System.out.println("Invalid response!");
