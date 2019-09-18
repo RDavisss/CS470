@@ -42,6 +42,7 @@ public class Client
         // string to read message from input 
         String client_response = "";
         
+        // Gets users input for updating software
         System.out.println("Would you like to update the software?");  
          
         try
@@ -49,6 +50,7 @@ public class Client
             client_response = input.readLine(); 
             out.writeUTF(client_response); 
             
+            // Checks to see if user entered Y or y
             if (client_response.equals("Y") || client_response.equals("y"))
             {
                 InputStream input1 = socket.getInputStream();
@@ -59,11 +61,13 @@ public class Client
                 System.out.println("Software has been updated to version: 2.0");
             }
             
+            // Checks to see if user entered N or n 
             else if (client_response.equals("N") || client_response.equals("n"))
             {
                 System.out.println("Update denied... Version: 1.0 still installed");
             }
             
+            // Check for invalid response
             else
             {
                 System.out.println("Invalid response");
